@@ -86,3 +86,19 @@ services:
     ports:
       - 80:80
       - 443:443
+
+  plex:
+    image: linuxserver/plex
+    container_name: plex
+    environment: 
+      TZ: Europe/Budapest
+      PGID: 1000
+      PUID: 1000
+    volumes:
+      - /mnt/hdd/config/plex:/config
+      - /mnt/hdd/tvshows:/data/tvshows
+      - /mnt/hdd/movies:/data/movies
+      - /mnt/hdd/transcode:/transcode
+    network_mode: host
+    ports:
+      - 32400:32400
