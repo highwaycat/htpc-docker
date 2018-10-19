@@ -5,6 +5,7 @@ services:
   jackett:
     image: linuxserver/jackett
     container_name: jackett
+    restart: always
     volumes:
       - ~/mnt/hdd/config/jackett:/config
       - ~/mnt/hdd/downloads:/downloads
@@ -18,6 +19,7 @@ services:
   sonarr:
     image: linuxserver/sonarr
     container_name: sonarr
+    restart: always
     volumes: 
       - ~/mnt/hdd/config/sonarr:/config
       - ~/mnt/hdd/tvshows:/tv
@@ -34,6 +36,7 @@ services:
   radarr:
     image: linuxserver/radarr
     container_name: radarr
+    restart: always
     volumes:
       - ~/mnt/hdd/config/radarr:/config
       - ~/mnt/hdd/movies:/movies
@@ -50,6 +53,7 @@ services:
   lidarr:
     image: linuxserver/lidarr
     container_name: lidarr
+    restart: always
     volumes: 
       - ~/mnt/hdd/config/lidarr:/config
       - ~/mnt/hdd/downloads:/downloads
@@ -64,6 +68,7 @@ services:
   deluge:
     image: linuxserver/deluge
     container_name: deluge
+    restart: always
     volumes:
       - ~/mnt/hdd/config/deluge:/config
       - ~/mnt/hdd/downloads:/downloads
@@ -80,6 +85,7 @@ services:
   nginx:
     image: nginx
     container_name: nginx
+    restart: always
     volumes:
       - ~/mnt/hdd/config/nginx/sites-enabled:/etc/nginx/sites-enabled
     network_mode: host
@@ -90,6 +96,7 @@ services:
   plex:
     image: linuxserver/plex
     container_name: plex
+    restart: always
     environment: 
       TZ: Europe/Budapest
       PGID: 1000
